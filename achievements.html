@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Achievements - Nilesh Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white sticky top-0 z-50 shadow-md dark:bg-indigo-900">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-xl font-bold hover:text-indigo-300">Nilesh Portfolio</a>
+
+      <!-- Hamburger button (mobile only) -->
+      <button id="menuButton" aria-label="Toggle Menu" aria-expanded="false"
+        class="md:hidden p-2 rounded hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          viewBox="0 0 24 24" >
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Desktop nav links -->
+      <ul id="navLinks" class="hidden md:flex space-x-6 text-lg items-center">
+        <li><a href="index.html" class="hover:text-indigo-300">Welcome</a></li>
+        <li><a href="about.html" class="hover:text-indigo-300">About</a></li>
+        <li><a href="achievements.html" class="hover:text-indigo-300 font-semibold underline">Achievements</a></li>
+        <li><a href="goals.html" class="hover:text-indigo-300">Goals</a></li>
+        <li><a href="personal.html" class="hover:text-indigo-300">Personal</a></li>
+        <li><a href="shoes.html" class="hover:text-indigo-300">Shop Shoes</a></li>
+        <li><a href="contact.html" class="hover:text-indigo-300">Contact</a></li>
+        <li>
+          <button id="darkModeToggle" aria-label="Toggle Dark Mode"
+            class="ml-4 p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors"
+            title="Toggle Dark Mode">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="md:hidden bg-indigo-700 text-white hidden flex-col px-6 pb-6 space-y-4">
+      <a href="index.html" class="block py-2 hover:text-indigo-300">Welcome</a>
+      <a href="about.html" class="block py-2 hover:text-indigo-300">About</a>
+      <a href="achievements.html" class="block py-2 font-semibold underline hover:text-indigo-300">Achievements</a>
+      <a href="goals.html" class="block py-2 hover:text-indigo-300">Goals</a>
+      <a href="personal.html" class="block py-2 hover:text-indigo-300">Personal</a>
+      <a href="shoes.html" class="block py-2 hover:text-indigo-300">Shop Shoes</a>
+      <a href="contact.html" class="block py-2 hover:text-indigo-300">Contact</a>
+      <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode"
+        class="w-full p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors text-center"
+        title="Toggle Dark Mode">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow container mx-auto p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-3xl mt-12" data-animate>
+    <h1 class="text-4xl font-extrabold text-indigo-700 dark:text-indigo-300 mb-8 text-center">Achievements</h1>
+
+    <ul class="list-disc list-inside text-gray-700 dark:text-gray-200 space-y-4 text-lg mb-6">
+      <li>
+        I have built a strong foundation in programming by learning and working with multiple languages including C, C++, Java, and Python.
+      </li>
+      <li>
+        I’ve practiced Data Structures and Algorithms extensively using Java, solving problems on platforms like LeetCode and HackerRank.
+      </li>
+      <li>
+        I also explored core computer science subjects like Operating Systems to deepen my understanding of how systems work under the hood.
+      </li>
+      <li>
+        These experiences have sharpened both my problem-solving and coding skills.
+      </li>
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-indigo-700 dark:bg-indigo-900 text-white text-center p-4">
+    <p>© 2025 Nilesh. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtnDesktop = document.getElementById('darkModeToggle');
+    const toggleBtnMobile = document.getElementById('darkModeToggleMobile');
+    const htmlElement = document.documentElement;
+
+    // Hamburger menu elements
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function enableDarkMode() {
+      htmlElement.classList.add('dark');
+      document.body.classList.add('bg-gray-900', 'text-gray-100');
+      document.querySelector('main').classList.remove('bg-white');
+      document.querySelector('main').classList.add('bg-gray-800');
+
+      // Headings and paragraphs color for dark mode
+      document.querySelectorAll('h1').forEach(el => {
+        el.classList.remove('text-indigo-700');
+        el.classList.add('text-indigo-400');
+      });
+      document.querySelectorAll('p, li').forEach(el => {
+        el.classList.remove('text-gray-700');
+        el.classList.add('text-gray-300');
+      });
+
+      toggleBtnDesktop.textContent = '☀️';
+      toggleBtnMobile.textContent = '☀️';
+      localStorage.setItem('darkMode', 'enabled');
+    }
+
+    function disableDarkMode() {
+      htmlElement.classList.remove('dark');
+      document.body.classList.remove('bg-gray-900', 'text-gray-100');
+      document.querySelector('main').classList.remove('bg-gray-800');
+      document.querySelector('main').classList.add('bg-white');
+
+      // Revert headings and paragraphs color for light mode
+      document.querySelectorAll('h1').forEach(el => {
+        el.classList.remove('text-indigo-400');
+        el.classList.add('text-indigo-700');
+      });
+      document.querySelectorAll('p, li').forEach(el => {
+        el.classList.remove('text-gray-300');
+        el.classList.add('text-gray-700');
+      });
+
+      toggleBtnDesktop.textContent = '🌙';
+      toggleBtnMobile.textContent = '🌙';
+      localStorage.setItem('darkMode', 'disabled');
+    }
+
+    // Initialize dark mode from localStorage or system preference
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'enabled') {
+      enableDarkMode();
+    } else if (!savedMode && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      enableDarkMode();
+    }
+
+    toggleBtnDesktop.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        disableDarkMode();
+      } else {
+        enableDarkMode();
+      }
+    });
+
+    toggleBtnMobile.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        disableDarkMode();
+      } else {
+        enableDarkMode();
+      }
+    });
+  </script>
+
+</body>
+</html>
+

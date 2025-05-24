@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nilesh Sharma - Portfolio, Education, Goals, Achievements" />
+  <meta name="author" content="Nilesh Sharma" />
+  <meta property="og:title" content="Nilesh's Portfolio" />
+  <meta property="og:image" content="img.jpg" />
+  <meta property="og:description" content="Personal introduction portfolio site." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Welcome - Nilesh Portfolio</title>
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto p-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="text-xl font-bold hover:text-indigo-300">Nilesh Portfolio</a>
+
+      <!-- Hamburger Icon (mobile) -->
+      <button id="menu-toggle" class="lg:hidden focus:outline-none text-white">
+        <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Nav Menu -->
+      <ul id="nav-menu"
+        class="hidden lg:flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0 text-lg items-center absolute lg:static top-20 left-0 w-full lg:w-auto bg-indigo-700 lg:bg-transparent p-4 lg:p-0 z-50 shadow-lg lg:shadow-none transition-all">
+        <li><a href="index.html" class="hover:text-indigo-300 font-semibold underline">Welcome</a></li>
+        <li><a href="about.html" class="hover:text-indigo-300">About</a></li>
+        <li><a href="achievements.html" class="hover:text-indigo-300">Achievements</a></li>
+        <li><a href="goals.html" class="hover:text-indigo-300">Goals</a></li>
+        <li><a href="personal.html" class="hover:text-indigo-300">Personal</a></li>
+        <li><a href="shoes.html" class="hover:text-indigo-300">Shop Shoes</a></li>
+        <li><a href="contact.html" class="hover:text-indigo-300">Contact</a></li>
+        <li>
+          <button id="darkModeToggle" aria-label="Toggle Dark Mode"
+            class="ml-4 p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors"
+            title="Toggle Dark Mode">🌙</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow container mx-auto p-8 bg-white rounded-lg shadow-lg max-w-3xl mt-12 transition-colors duration-300" data-animate>
+    <h1 class="text-4xl font-extrabold text-indigo-700 mb-8 text-center">Welcome</h1>
+    <div class="mt-8 flex justify-center">
+      <img src="img/img.jpg" alt="Nilesh's profile picture" class="w-48 h-60 object-cover rounded-lg shadow-md" />
+    </div>
+    <p class="text-lg text-center max-w-xl mx-auto mt-4">
+      Hello! I am Nilesh. Welcome to my personal portfolio website. Explore to learn more about me, my achievements, goals, and personal interests.
+    </p>
+
+    <!-- Video Section -->
+    <div class="mt-8 flex justify-center">
+      <video class="rounded-lg shadow-md" width="320" controls>
+        <source src="img/WhatsApp Video 2025-05-21 at 3.23.09 PM.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-800 hidden">⬆️</button>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-indigo-700 text-white text-center p-4 transition-colors duration-300">
+    <p>© 2025 Nilesh. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const htmlElement = document.documentElement;
+    const savedMode = localStorage.getItem('darkMode');
+
+    if (savedMode === 'enabled') {
+      enableDarkMode();
+    } else if (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      enableDarkMode();
+    }
+
+    function enableDarkMode() {
+      htmlElement.classList.add('dark');
+      document.body.classList.add('bg-gray-900', 'text-gray-100');
+      document.querySelector('main').classList.replace('bg-white', 'bg-gray-800');
+      toggleBtn.textContent = '☀️';
+      localStorage.setItem('darkMode', 'enabled');
+    }
+
+    function disableDarkMode() {
+      htmlElement.classList.remove('dark');
+      document.body.classList.remove('bg-gray-900', 'text-gray-100');
+      document.querySelector('main').classList.replace('bg-gray-800', 'bg-white');
+      toggleBtn.textContent = '🌙';
+      localStorage.setItem('darkMode', 'disabled');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      htmlElement.classList.contains('dark') ? disableDarkMode() : enableDarkMode();
+    });
+
+    // Hamburger Toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+
+    // Scroll to Top
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
+

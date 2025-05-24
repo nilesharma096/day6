@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Future Goals - Nilesh Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white sticky top-0 z-50 shadow-md dark:bg-indigo-900">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-xl font-bold hover:text-indigo-300">Nilesh Portfolio</a>
+
+      <!-- Hamburger button (mobile only) -->
+      <button id="menuButton" aria-label="Toggle Menu" aria-expanded="false"
+        class="md:hidden p-2 rounded hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          viewBox="0 0 24 24" >
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Desktop nav links -->
+      <ul id="navLinks" class="hidden md:flex space-x-6 text-lg items-center">
+        <li><a href="index.html" class="hover:text-indigo-300">Welcome</a></li>
+        <li><a href="about.html" class="hover:text-indigo-300">About</a></li>
+        <li><a href="achievements.html" class="hover:text-indigo-300">Achievements</a></li>
+        <li><a href="goals.html" class="hover:text-indigo-300 font-semibold underline">Goals</a></li>
+        <li><a href="personal.html" class="hover:text-indigo-300">Personal</a></li>
+        <li><a href="shoes.html" class="hover:text-indigo-300">Shop Shoes</a></li>
+        <li><a href="contact.html" class="hover:text-indigo-300">Contact</a></li>
+
+        <!-- Dark Mode Toggle Button -->
+        <li>
+          <button id="darkModeToggle" aria-label="Toggle Dark Mode"
+            class="ml-4 p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors"
+            title="Toggle Dark Mode">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden bg-indigo-700 text-white hidden flex-col px-6 pb-6 space-y-4">
+      <a href="index.html" class="block py-2 hover:text-indigo-300">Welcome</a>
+      <a href="about.html" class="block py-2 hover:text-indigo-300">About</a>
+      <a href="achievements.html" class="block py-2 hover:text-indigo-300">Achievements</a>
+      <a href="goals.html" class="block py-2 font-semibold underline hover:text-indigo-300">Goals</a>
+      <a href="personal.html" class="block py-2 hover:text-indigo-300">Personal</a>
+      <a href="shoes.html" class="block py-2 hover:text-indigo-300">Shop Shoes</a>
+      <a href="contact.html" class="block py-2 hover:text-indigo-300">Contact</a>
+      <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode"
+        class="w-full p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors text-center"
+        title="Toggle Dark Mode">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow container mx-auto p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-3xl mt-12" data-animate>
+    <h1 class="text-4xl font-extrabold text-indigo-700 dark:text-indigo-300 mb-8 text-center">Future Goals</h1>
+
+    <p class="text-lg mb-6">
+      My aim is to become a skilled Full Stack Developer, contribute to open source, and create innovative applications that help solve real-world problems. I am passionate about learning new technologies and constantly improving my skills. Become a proficient Full-Stack Developer by mastering frontend and backend technologies. Build meaningful AI-powered products that have a positive impact on people's lives. Keep enhancing my knowledge in data structures, algorithms, and system design to solve complex problems efficiently. Stay updated with the latest industry trends and tools, such as cloud computing and DevOps practices. Ultimately, I want to use my skills to innovate and create technology solutions that make a difference.
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-indigo-700 dark:bg-indigo-900 text-white text-center p-4">
+    <p>© 2025 Nilesh. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtnDesktop = document.getElementById('darkModeToggle');
+    const toggleBtnMobile = document.getElementById('darkModeToggleMobile');
+    const htmlElement = document.documentElement;
+
+    // Hamburger menu elements
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function enableDarkMode() {
+      htmlElement.classList.add('dark');
+      document.body.classList.add('bg-gray-900', 'text-gray-100');
+      document.querySelector('main').classList.remove('bg-white');
+      document.querySelector('main').classList.add('bg-gray-800');
+
+      document.querySelectorAll('h1').forEach(el => {
+        el.classList.remove('text-indigo-700');
+        el.classList.add('text-indigo-400');
+      });
+      document.querySelectorAll('p').forEach(el => {
+        el.classList.remove('text-gray-700');
+        el.classList.add('text-gray-300');
+      });
+
+      toggleBtnDesktop.textContent = '☀️';
+      toggleBtnMobile.textContent = '☀️';
+      localStorage.setItem('darkMode', 'enabled');
+    }
+
+    function disableDarkMode() {
+      htmlElement.classList.remove('dark');
+      document.body.classList.remove('bg-gray-900', 'text-gray-100');
+      document.querySelector('main').classList.remove('bg-gray-800');
+      document.querySelector('main').classList.add('bg-white');
+
+      document.querySelectorAll('h1').forEach(el => {
+        el.classList.remove('text-indigo-400');
+        el.classList.add('text-indigo-700');
+      });
+      document.querySelectorAll('p').forEach(el => {
+        el.classList.remove('text-gray-300');
+        el.classList.add('text-gray-700');
+      });
+
+      toggleBtnDesktop.textContent = '🌙';
+      toggleBtnMobile.textContent = '🌙';
+      localStorage.setItem('darkMode', 'disabled');
+    }
+
+    // Initialize dark mode from localStorage or system preference
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'enabled') {
+      enableDarkMode();
+    } else if (!savedMode && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      enableDarkMode();
+    }
+
+    toggleBtnDesktop.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        disableDarkMode();
+      } else {
+        enableDarkMode();
+      }
+    });
+
+    toggleBtnMobile.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        disableDarkMode();
+      } else {
+        enableDarkMode();
+      }
+    });
+  </script>
+
+</body>
+</html>
+

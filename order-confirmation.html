@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed - NiluKicks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="favicon.ico" />
+  <meta name="description" content="Your order at NiluKicks has been confirmed. Thank you for your purchase!" />
+  <meta name="keywords" content="order confirmed, thank you, purchase, NiluKicks" />
+  <style>
+    html {
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" data-theme="light">
+  <header class="bg-indigo-700 text-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto p-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-extrabold hover:text-indigo-300">NiluKicks</a>
+      <ul class="flex space-x-6 text-lg items-center">
+        <li><a href="shoes.html" class="hover:text-indigo-300">Shop</a></li>
+        <li><a href="contact.html" class="hover:text-indigo-300">Contact</a></li>
+        <li>
+          <button id="darkModeToggle" aria-label="Toggle Dark Mode"
+            class="ml-4 p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors"
+            title="Toggle Dark Mode">🌙</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="flex-grow container mx-auto p-8 bg-white rounded-lg shadow-lg max-w-2xl mt-12 mb-12 text-center transition-colors duration-300 dark:bg-gray-800">
+    <div class="card w-full bg-base-100 shadow-xl p-8">
+      <figure class="px-10 pt-10">
+        <svg class="w-24 h-24 text-green-500 mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </figure>
+      <div class="card-body items-center text-center">
+        <h1 class="card-title text-4xl font-extrabold text-indigo-700 dark:text-indigo-300 mb-4">Order Confirmed!</h1>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Thank you for your purchase from NiluKicks!</p>
+        <p class="text-md text-gray-600 dark:text-gray-400 mb-2">Your order number is: <span class="font-bold text-indigo-600 dark:text-indigo-400">#NILUKICKS-${Math.floor(Math.random() * 1000000) + 100000}</span></p>
+        <p class="text-md text-gray-600 dark:text-gray-400 mb-6">You will receive an email confirmation with delivery details shortly.</p>
+        <div class="card-actions">
+          <a href="shoes.html" class="btn btn-primary btn-lg">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-auto bg-indigo-700 text-white text-center p-4 transition-colors duration-300">
+    <p>© 2025 NiluKicks. All rights reserved.</p>
+  </footer>
+
+  <script type="module">
+    import { initializePage, showToast } from './js/shared.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initializePage(); // Initialize dark mode, etc.
+
+      // Check if the user came from a successful checkout
+      if (localStorage.getItem('lastOrderPlaced') === 'true') {
+        showToast('Your order has been successfully placed!', 'success');
+        localStorage.removeItem('lastOrderPlaced'); // Clear the flag
+      } else {
+        // Optional: Redirect if user tries to access this page directly without placing an order
+        // window.location.href = 'index.html';
+      }
+    });
+    // Inside order-confirmation.html's <script type="module"> block:
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializePage(); // Initialize dark mode, etc.
+
+  // Check if the user came from a successful checkout
+  if (localStorage.getItem('lastOrderPlaced') === 'true') { // Checks the flag
+    showToast('Your order has been successfully placed!', 'success'); // Shows the toast
+    localStorage.removeItem('lastOrderPlaced'); // Clears the flag so it doesn't show again on refresh
+  } else {
+    // Optional: Redirect if user tries to access this page directly without placing an order
+    // window.location.href = 'index.html';
+  }
+});
+  </script>
+</body>
+</html>

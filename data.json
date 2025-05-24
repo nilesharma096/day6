@@ -1,0 +1,14 @@
+{
+  "achievements": [
+    "Completed 3 internships in software development.",
+    "Won 2 hackathons at college level.",
+    "Published 1 research paper on AI algorithms.",
+    "Contributed to open-source projects on GitHub."
+  ],
+  "personal": {
+    "hobbies": ["Coding", "Reading tech blogs", "Playing badminton", "Traveling"],
+    "roleModels": ["Elon Musk", "Sundar Pichai", "Bill Gates"],
+    "books": ["Clean Code", "The Pragmatic Programmer", "Introduction to Algorithms"],
+    "websites": ["Stack Overflow", "GitHub", "Dev.to", "HackerRank"]
+  }
+}

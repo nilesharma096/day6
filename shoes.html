@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NiluKicks - Shop Trendy Shoes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="favicon.ico" />
+  <meta name="description" content="Shop the latest collection of trendy shoes at NiluKicks. Find sneakers, formal shoes, casual footwear, and more." />
+  <meta name="keywords" content="shoes, sneakers, footwear, casual, formal, boots, sandals, online shoe store, NiluKicks, shop, trendy, fashion, Nike, Adidas, Converse" />
+  <meta property="og:title" content="NiluKicks - Your Go-To Shoe Shop" />
+  <meta property="og:description" content="Discover the perfect pair for every occasion. Shop now at NiluKicks for quality, comfort, and style." />
+  <meta property="og:image" content="img/social-share-shoes.jpg" />
+  <meta property="og:url" content="https://yourusername.github.io/your-repo-name/index.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@yourtwitterhandle" />
+  <meta name="twitter:title" content="NiluKicks - Shop Trendy Shoes" />
+  <meta name="twitter:description" content="Shop the latest collection of trendy shoes at NiluKicks." />
+  <meta name="twitter:image" content="img/social-share-shoes.jpg" />
+  <style>
+    html {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .product-card {
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .overflow-x-auto::-webkit-scrollbar {
+        display: none;
+    }
+    .overflow-x-auto {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .card.image-full:before {
+      background-color: rgba(0, 0, 0, 0.2) !important;
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+</head>
+  <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans transition-colors duration-300">
+    <header class="bg-indigo-700 text-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto p-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-extrabold hover:text-indigo-300">NiluKicks</a>
+      <button id="menuButton" class="lg:hidden btn btn-ghost text-white" aria-label="Toggle Menu" aria-expanded="false">
+        <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <ul id="navLinks" class="hidden lg:flex space-x-6 text-lg items-right justify ">
+        <li class="relative w-full max-w-lg">
+            <input type="text" placeholder="Search for shoes..." class="input input-sm input-bordered bg-white text-gray-800 rounded-full pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-indigo-300 w-96" id="search-input-desktop" />
+            <button class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </button>
+        </li>
+        <li><a href="shoes.html" class="hover:text-indigo-300 text-white font-semibold underline">Home</a></li>
+        <li><a href="contact.html" class="hover:text-indigo-300 text-white">Contact</a></li>
+      </ul>
+      <ul id="nav-menu"
+        class="hidden lg:flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0 text-lg items-center absolute lg:static top-20 left-0 w-full lg:w-auto bg-indigo-700 lg:bg-transparent p-4 lg:p-0 z-50 shadow-lg lg:shadow-none transition-all">
+        <li>
+          <button id="darkModeToggle" aria-label="Toggle Dark Mode"
+            class="ml-4 p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors"
+            title="Toggle Dark Mode">🌙</button>
+        </li>
+      </ul>
+    </nav>
+    <div id="mobileMenu" class="lg:hidden bg-indigo-700 text-white hidden flex-col px-6 pb-6 space-y-4">
+      <a href="shoes.html" class="block py-2 hover:text-indigo-300 font-semibold underline">Home</a>
+      <a href="contact.html" class="block py-2 hover:text-indigo-300 text-white">Contact</a>
+      <div class="relative w-full">
+        <input type="text" placeholder="Search..." class="input input-sm input-bordered bg-white text-gray-800 rounded-full w-full pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-indigo-300" id="search-input-mobile" />
+        <button class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+        </button>
+      </div>
+      <a href="cart.html" id="view-cart-btn-mobile" class="btn btn-ghost text-white flex items-center justify-start">
+        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.5 14 6.333 14H15a1 1 0 000-2H6.333a.834.834 0 01-.629-.295L4.75 9.184V9.18l-1.5-6H3V1z"></path><path d="M6 14a2 2 0 100 4 2 2 0 000-4zm7 0a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+        Cart (<span id="cart-count-mobile">0</span>)
+      </a>
+      <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode"
+        class="w-full p-2 rounded bg-indigo-600 hover:bg-indigo-800 transition-colors text-center"
+        title="Toggle Dark Mode">🌙</button>
+    </div>
+  </header>
+  <main class="flex-grow container mx-auto p-8 bg-white rounded-lg shadow-lg max-w-screen-2xl mt-12 transition-colors duration-300 dark:bg-gray-800" data-animate>
+    <h1 class="text-4xl font-extrabold text-indigo-700 dark:text-indigo-300 mb-8 text-center">NiluKicks - Your Perfect Pair Awaits</h1>
+    <section class="hero-section mb-12">
+      <div class="carousel w-full h-80 md:h-96 rounded-box shadow-xl">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img src="img/o.jpg" alt="Red Sneakers" class="w-full object-cover rounded-box" loading="lazy" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" class="btn btn-circle">❮</a>
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
+              <div class="text-center text-white">
+                  <h3 class="text-4xl md:text-5xl font-bold mb-4 animate-pulse text-gray-100">Step Up Your Style!</h3>
+                  <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">Discover the latest trends in footwear for every occasion.</p>
+                  <a href="#product-grid-section" class="mt-6 btn btn-lg btn-primary text-black font-semibold hover:scale-105 transition-transform duration-300">Shop New Arrivals</a>
+              </div>
+          </div>
+        </div>
+        <div id="slide2" class="carousel-item relative w-full">
+          <img src="img/db.jpg" alt="Running Shoes" class="w-full object-cover rounded-box" loading="lazy" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+           <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
+              <div class="text-center text-white">
+                  <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-100">Comfort Meets Performance</h2>
+                  <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">Find the perfect pair of running shoes for your next adventure.</p>
+                  <a href="#product-grid-section" class="mt-6 btn btn-lg btn-accent text-white font-semibold hover:scale-105 transition-transform duration-300">Explore Performance</a>
+              </div>
+          </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img src="img/eo.jpg" alt="Formal Shoes" class="w-full object-cover rounded-box" loading="lazy" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+           <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
+              <div class="text-center text-white">
+                  <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-100">Elegance for Every Occasion</h2>
+                  <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">Complete your look with our sophisticated range of formal footwear.</p>
+                  <a href="#product-grid-section" class="mt-6 btn btn-lg btn-info text-white font-semibold hover:scale-105 transition-transform duration-300">View Formal Wear</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="categories-section my-12">
+        <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-6 text-center">Shop by Category / Brand</h2>
+        <div class="flex space-x-4 py-4 overflow-x-auto justify-start">
+            <div class="card w-64 bg-base-100 shadow-xl image-full cursor-pointer hover:scale-105 transition-transform duration-300" data-filter-category="sneakers">
+                <figure><img src="img/sneaker.jpg" alt="Sneakers" class="object-cover" loading="lazy" /></figure>
+                <div class="card-body justify-center items-center">
+                    <h3 class="card-title text-white text-3xl font-bold">Sneakers</h3>
+                </div>
+            </div>
+            <div class="card w-64 bg-base-100 shadow-xl image-full cursor-pointer hover:scale-105 transition-transform duration-300" data-filter-category="formal">
+                <figure><img src="img/formalshoes.jpg" alt="Formal Shoes" class="object-cover" loading="lazy" /></figure>
+                <div class="card-body justify-center items-center">
+                    <h3 class="card-title text-white text-3xl font-bold">Formal</h3>
+                </div>
+            </div>
+            <div class="card w-64 bg-base-100 shadow-xl image-full cursor-pointer hover:scale-105 transition-transform duration-300" data-filter-category="sandals">
+                <figure><img src="img/sandalas.jpg" alt="Sandals" class="object-cover" loading="lazy" /></figure>
+                <div class="card-body justify-center items-center">
+                    <h3 class="card-title text-white text-3xl font-bold">Sandals</h3>
+                </div>
+            </div>
+            <div class="card w-64 bg-base-100 shadow-xl image-full cursor-pointer hover:scale-105 transition-transform duration-300" data-filter-brand="Adidas">
+                <figure><img src="img/adidas.jpg" alt="Adidas" class="object-cover" loading="lazy" /></figure>
+                <div class="card-body justify-center items-center">
+                    <h3 class="card-title text-white text-3xl font-bold">Adidas</h3>
+                </div>
+            </div>
+            <div class="card w-64 bg-base-100 shadow-xl image-full cursor-pointer hover:scale-105 transition-transform duration-300" data-filter-brand="Nike">
+                <figure><img src="img/nike.jpg" alt="Nike" class="object-cover" loading="lazy" /></figure>
+                <div class="card-body justify-center items-center">
+                    <h3 class="card-title text-white text-3xl font-bold">Nike</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mission-section bg-indigo-50 dark:bg-gray-800 p-8 rounded-lg shadow-inner mb-12">
+        <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-6 text-center">Our Mission</h2>
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2">
+                <img src="img/p1.jpeg" alt="People walking with stylish shoes" class="rounded-lg shadow-md object-cover w-full h-auto" loading="lazy">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-4">
+                    At NiluKicks, we believe that the right pair of shoes can transform your day. Our mission is to provide every customer with high-quality, comfortable, and stylish footwear that empowers them to step confidently through life.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                    We handpick each item in our collection, focusing on craftsmanship, design, and ethical sourcing. From the latest trends to timeless classics, we are dedicated to offering a diverse range that caters to every taste and occasion.
+                </p>
+                <a href="about.html" class="btn btn-link text-indigo-600 dark:text-indigo-400 mt-4">Read More About Us &rarr;</a>
+            </div>
+        </div>
+    </section>
+    <section class="values-section mb-12">
+        <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-8 text-center">Our Core Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card bg-base-100 shadow-lg text-center p-6 dark:bg-gray-700">
+                <figure class="mx-auto mb-4">
+                    <img src="img/quality.jpg" alt="Quality Icon" class="w-16 h-16 dark:filter dark:invert" loading="lazy">
+                </figure>
+                <h3 class="font-bold text-xl mb-2 text-indigo-700 dark:text-indigo-300">Uncompromising Quality</h3>
+                <p class="text-gray-700 dark:text-gray-300">Every pair is meticulously inspected to ensure lasting comfort and durability.</p>
+            </div>
+            <div class="card bg-base-100 shadow-lg text-center p-6 dark:bg-gray-700">
+                <figure class="mx-auto mb-4">
+                    <img src="img/sustainable.jpg" alt="Sustainability Icon" class="w-16 h-16 dark:filter dark:invert" loading="lazy">
+                </figure>
+                <h3 class="font-bold text-xl mb-2 text-indigo-700 dark:text-indigo-300">Sustainable Practices</h3>
+                <p class="text-gray-700 dark:text-gray-300">Committed to eco-friendly materials and ethical production processes.</p>
+            </div>
+            <div class="card bg-base-100 shadow-lg text-center p-6 dark:bg-gray-700">
+                <figure class="mx-auto mb-4">
+                    <img src="img/innovative.png" alt="Innovation Icon" class="w-16 h-16 dark:filter dark:invert" loading="lazy">
+                </figure>
+                <h3 class="font-bold text-xl mb-2 text-indigo-700 dark:text-indigo-300">Innovative Design</h3>
+                <p class="text-gray-700 dark:text-gray-300">Pushing boundaries with cutting-edge designs and footwear technology.</p>
+            </div>
+        </div>
+    </section>
+    <section id="product-grid-section" class="products-section mb-12">
+      <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-6 text-center">Our Latest Collection</h2>
+      <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+        <div class="flex items-center gap-2 w-full md:w-auto">
+          <label for="sort-by" class="text-lg font-semibold text-indigo-700 dark:text-indigo-300">Sort By:</label>
+          <select id="sort-by" class="select select-bordered select-sm w-full md:w-auto bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-600">
+            <option value="default">Recommended</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A-Z</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-2 w-full md:w-auto">
+          <label for="filter-category" class="text-lg font-semibold text-indigo-700 dark:text-indigo-300">Category:</label>
+          <select id="filter-category" class="select select-bordered select-sm w-full md:w-auto bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-600">
+            <option value="all">All</option>
+            <option value="sneakers">Sneakers</option>
+            <option value="formal">Formal</option>
+            <option value="boots">Boots</option>
+            <option value="sandals">Sandals</option>
+            <option value="running">Running</option>
+            <option value="casual">Casual</option>
+          </select>
+        </div>
+         <div class="flex items-center gap-2 w-full md:w-auto">
+          <label for="filter-brand" class="text-lg font-semibold text-indigo-700 dark:text-indigo-300">Brand:</label>
+          <select id="filter-brand" class="select select-bordered select-sm w-full md:w-auto bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-600">
+            <option value="all">All</option>
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
+            <option value="Converse">Converse</option>
+            <option value="Timberland">Timberland</option>
+            <option value="Birkenstock">Birkenstock</option>
+            <option value="Clarks">Clarks</option>
+            <option value="Puma">Puma</option>
+            <option value="Skechers">Skechers</option>
+            <option value="Reebok">Reebok</option>
+            <option value="Merrell">Merrell</option>
+            <option value="ASICS">ASICS</option>
+            <option value="Vans">Vans</option>
+            <option value="Steve Madden">Steve Madden</option>
+            <option value="Zara">Zara</option>
+            <option value="Allen Edmonds">Allen Edmonds</option>
+            <option value="Columbia">Columbia</option>
+            <option value="ECCO">ECCO</option>
+            <option value="Havaianas">Havaianas</option>
+            <option value="Salomon">Salomon</option>
+            <option value="Sperry">Sperry</option>
+            <option value="Caterpillar">Caterpillar</option>
+            <option value="Aldo">Aldo</option>
+            <option value="Keen">Keen</option>
+            <option value="Doc Martens">Doc Martens</option>
+            <option value="Ted Baker">Ted Baker</option>
+            <option value="Brooks">Brooks</option>
+            <option value="Balenciaga">Balenciaga</option>
+            <option value="Sam Edelman">Sam Edelman</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Crocs">Crocs</option>
+          </select>
+        </div>
+      </div>
+      <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/ff.jpg" alt="Classic white Nike sneakers" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Classic White Sneakers</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Nike - sneakers</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹7500.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="1" data-default-size="US 9">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="1">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/2.jpg" alt="Adidas UltraBoost running shoes" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">UltraBoost Running Shoes</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Adidas - running</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹12500.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="2" data-default-size="US 10">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="2">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/3.jpg" alt="Timberland waterproof hiking boots" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <!-- <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Waterproof Hiking Boots</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Timberland - boots</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹1.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="5" data-default-size="US 9">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="5">Quick View</button>
+                </div>
+            </div> -->
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/4.jpg" alt="Brown leather formal oxford shoes" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Premium Leather Oxfords</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Clarks - formal</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹10000.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="4" data-default-size="US 8">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="4">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/5.jpg" alt="Puma Suede Classic sneakers" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Suede Classic</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Puma - sneakers</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹6800.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="6" data-default-size="US 9">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="6">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/6.jpg" alt="Skechers Go Walk casual shoes" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Go Walk Comfort</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Skechers - casual</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹5200.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="7" data-default-size="US 8">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="7">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/7.jpg" alt="Reebok Classic Leather sneakers" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Classic Leather</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Reebok - sneakers</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹7000.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="8" data-default-size="US 9">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="8">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/8.jpg" alt="Merrell Moab 2 hiking shoes" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Moab 2 Ventilator</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Merrell - boots</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹11500.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="9" data-default-size="US 10">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="9">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/9.jpg" alt="ASICS Gel-Kayano running shoes" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Gel-Kayano 28</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">ASICS - running</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹13000.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="10" data-default-size="US 9">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="10">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/10.jpg" alt="Vans Old Skool skateboarding shoes" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Old Skool Skate</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Vans - sneakers</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹6000.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="11" data-default-size="US 8">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="11">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/11.jpg" alt="Steve Madden loafers" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Stylish Loafers</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Steve Madden - formal</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹9500.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="12" data-default-size="US 7">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="12">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/12.jpg" alt="Zara ankle boots" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Chic Ankle Boots</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Zara - boots</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹8000.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="13" data-default-size="EU 38">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="13">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/13.jpg" alt="Allen Edmonds Park Avenue" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Park Avenue Oxford</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Allen Edmonds - formal</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹20000.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="14" data-default-size="US 9">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="14">Quick View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl product-card">
+            <figure class="h-48">
+                <img src="img/14.jpg" alt="Columbia Newton Ridge hiking boots" class="w-full h-full object-cover" loading="lazy"/>
+            </figure>
+            <div class="card-body p-4">
+                <h3 class="card-title text-xl font-semibold">Newton Ridge Plus</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Columbia - boots</p>
+                <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹9800.00</p>
+                <div class="card-actions justify-end mt-4">
+                    <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="15" data-default-size="US 11">Add to Cart</button>
+                    <button class="btn btn-outline btn-sm view-product-btn" data-product-id="15">Quick View</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="benefits-section mb-12">
+        <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-8 text-center">Why Choose NiluKicks?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card bg-base-100 shadow-lg text-center p-6 dark:bg-gray-700 hover:shadow-xl transition-shadow duration-300">
+                <figure class="mx-auto mb-4">
+                    <img src="img/4.jpg" alt="Comfortable Shoes" class="rounded-full w-32 h-32 object-cover border-4 border-indigo-200 dark:border-indigo-600" loading="lazy">
+                </figure>
+                <h3 class="font-bold text-xl mb-2 text-indigo-700 dark:text-indigo-300">Unmatched Comfort</h3>
+                <p class="text-gray-700 dark:text-gray-300">Experience cloud-like comfort with every step, crafted for your daily wear.</p>
+            </div>
+            <div class="card bg-base-100 shadow-lg text-center p-6 dark:bg-gray-700 hover:shadow-xl transition-shadow duration-300">
+                <figure class="mx-auto mb-4">
+                    <img src="img/6.jpg" alt="Stylish Shoes" class="rounded-full w-32 h-32 object-cover border-4 border-indigo-200 dark:border-indigo-600" loading="lazy">
+                </figure>
+                <h3 class="font-bold text-xl mb-2 text-indigo-700 dark:text-indigo-300">Trendsetting Styles</h3>
+                <p class="text-gray-700 dark:text-gray-300">Stay ahead of the curve with our curated collection of the latest shoe fashion.</p>
+            </div>
+            <div class="card bg-base-100 shadow-lg text-center p-6 dark:bg-gray-700 hover:shadow-xl transition-shadow duration-300">
+                <figure class="mx-auto mb-4">
+                    <img src="img/2.jpg" alt="Durable Shoes" class="rounded-full w-32 h-32 object-cover border-4 border-indigo-200 dark:border-indigo-600" loading="lazy">
+                </figure>
+                <h3 class="font-bold text-xl mb-2 text-indigo-700 dark:text-indigo-300">Built to Last</h3>
+                <p class="text-gray-700 dark:text-gray-300">Invest in quality footwear designed for durability and long-term enjoyment.</p>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials-section mb-12">
+        <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 mb-6 text-center">What Our Customers Say</h2>
+        <div class="carousel w-full rounded-box shadow-lg bg-gray-100 dark:bg-gray-700 p-6">
+            <div id="testi-item1" class="carousel-item w-full flex flex-col items-center justify-center p-8 text-center">
+                <blockquote class="text-xl italic text-gray-700 dark:text-gray-300 mb-4">"Absolutely love my new sneakers from NiluKicks! They're so comfortable and stylish. Fast delivery too!"</blockquote>
+                <p class="font-bold text-indigo-600 dark:text-indigo-400">- Aisha K.</p>
+                <div class="rating mt-2">
+                    <input type="radio" name="testi-rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="testi-rating-1" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-1" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-1" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-1" class="mask mask-star-2 bg-orange-400" />
+                </div>
+            </div>
+            <div id="testi-item2" class="carousel-item w-full flex flex-col items-center justify-center p-8 text-center">
+                <blockquote class="text-xl italic text-gray-700 dark:text-gray-300 mb-4">"The formal shoes are top-notch quality. Perfect for my office wear. NiluKicks is my new favorite!"</blockquote>
+                <p class="font-bold text-indigo-600 dark:text-indigo-400">- Vikram R.</p>
+                <div class="rating mt-2">
+                    <input type="radio" name="testi-rating-2" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="testi-rating-2" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-2" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-2" class="mask mask-star-2 bg-orange-400" />
+                </div>
+            </div>
+            <div id="testi-item3" class="carousel-item w-full flex flex-col items-center justify-center p-8 text-center">
+                <blockquote class="text-xl italic text-gray-700 dark:text-gray-300 mb-4">"Finally, a store with a great selection of boots! The pair I got is exactly what I was looking for."</blockquote>
+                <p class="font-bold text-indigo-600 dark:text-indigo-400">- Fatima H.</p>
+                <div class="rating mt-2">
+                    <input type="radio" name="testi-rating-3" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-3" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-3" class="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="testi-rating-3" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="testi-rating-3" class="mask mask-star-2 bg-orange-400" />
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center w-full py-2 gap-2 mt-4">
+            <a href="#testi-item1" class="btn btn-xs">1</a>
+            <a href="#testi-item2" class="btn btn-xs">2</a>
+            <a href="#testi-item3" class="btn btn-xs">3</a>
+        </div>
+    </section>
+    <section class="cta-newsletter-section bg-indigo-600 dark:bg-indigo-800 text-white p-8 rounded-lg shadow-xl mb-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Don't Miss Out!</h2>
+        <p class="text-lg md:text-xl mb-6">Get exclusive offers, new arrival alerts, and style tips directly to your inbox.</p>
+        <div class="form-control w-full max-w-md mx-auto">
+            <div class="relative">
+                <input type="email" placeholder="Enter your email address" class="input input-bordered w-full pr-16 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-300" />
+                <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+            </div>
+        </div>
+    </section>
+    <dialog id="product_details_modal" class="modal">
+      <div class="modal-box w-11/12 max-w-4xl bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 p-6 rounded-lg shadow-lg">
+        <h3 id="modal-product-name" class="font-bold text-3xl text-indigo-700 dark:text-indigo-300 mb-4"></h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <figure class="mb-4 md:mb-0">
+                <img id="modal-product-image" src="" alt="Product Image" class="w-full h-80 object-cover rounded-md mx-auto border border-gray-200 dark:border-gray-600">
+            </figure>
+            <div>
+                <p id="modal-product-description" class="py-4 text-lg leading-relaxed"></p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2"><span class="font-semibold">Category:</span> <span id="modal-product-category"></span></p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4"><span class="font-semibold">Brand:</span> <span id="modal-product-brand"></span></p>
+                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-4"><span class="font-semibold">Gender:</span> <span id="modal-product-gender"></span></p>
+                <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                    <span id="modal-product-price" class="text-4xl font-extrabold text-indigo-600 dark:text-indigo-400"></span>
+                    <div class="form-control flex-grow">
+                        <label class="label">
+                          <span class="label-text text-gray-700 dark:text-gray-300">Select Size:</span>
+                        </label>
+                        <select id="modal-product-sizes" class="select select-bordered w-full bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </select>
+                    </div>
+                     <div class="form-control flex-grow">
+                        <label class="label">
+                          <span class="label-text text-gray-700 dark:text-gray-300">Quantity:</span>
+                        </label>
+                         <input type="number" id="modal-product-quantity" value="1" min="1" class="input input-bordered w-full bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                </div>
+                <div class="modal-action mt-6 flex justify-end flex-wrap gap-2">
+                  <form method="dialog" class="flex gap-2">
+                    <button id="modal-add-to-cart-btn" class="btn btn-primary" data-product-id="">Add to Cart</button>
+                    <button class="btn btn-neutral">
+                        <a id="modal-view-details-btn" href="#" class="text-white">View Full Details</a>
+                    </button>
+                    <button class="btn btn-ghost">Close</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </dialog>
+  </main>
+  <div class="drawer drawer-end z-50">
+    <input id="cart-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <label for="cart-drawer" id="view-cart-btn" class="fixed bottom-6 right-6 p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-800 z-40 flex items-center justify-center cursor-pointer">
+        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5H2m5 8a2 2 0 100 4 2 2 0 000-4zm7 0a2 2 0 100 4 2 2 0 000-4z"></path>
+        </svg>
+        <span id="cart-count">0</span>
+      </label>
+    </div>
+    <div class="drawer-side">
+      <label for="cart-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+      <aside id="cart-sidebar-drawer" class="h-full w-80 bg-gray-100 dark:bg-gray-800 shadow-xl p-6 border-l border-gray-300 dark:border-gray-700">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-indigo-700 dark:text-indigo-300">Your Cart</h3>
+          <label for="cart-drawer" class="btn btn-sm btn-circle btn-ghost text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 text-2xl font-semibold">
+            &times;
+          </label>
+        </div>
+        <div id="cart-items" class="space-y-4 overflow-y-auto max-h-[calc(100%-160px)] pb-4">
+          <p id="empty-cart-message" class="text-gray-600 dark:text-gray-400 text-center">Your cart is empty.</p>
+        </div>
+        <div class="border-t border-gray-300 dark:border-gray-700 pt-4 mt-4">
+          <p class="text-xl font-bold flex justify-between">Total: <span id="cart-total">₹0.00</span></p>
+          <a href="cart.html" id="checkout-btn" class="w-full mt-4 btn btn-success">View Cart & Checkout</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <button id="scroll-to-top-btn" class="fixed bottom-6 left-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-800 transition-opacity duration-300 opacity-0 z-40">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+  <div id="toast-container" class="fixed top-4 right-4 z-[999] flex flex-col items-end space-y-2"></div>
+  <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 flex flex-col md:flex-row items-center justify-between z-[100] transform translate-y-full transition-transform duration-500">
+    <p class="text-sm text-center md:text-left mb-2 md:mb-0">
+      This site uses cookies to ensure you get the best experience. By continuing to use our site, you agree to our <a href="#" class="underline hover:text-indigo-300 text-white">Cookie Policy</a>.
+    </p>
+    <div class="flex space-x-2">
+      <button id="accept-cookies-btn" class="btn btn-sm btn-primary">Accept</button>
+      <button id="decline-cookies-btn" class="btn btn-sm btn-ghost">Decline</button>
+    </div>
+  </div>
+  <footer class="mt-auto bg-indigo-700  text-center p-4 transition-colors duration-300">
+    <p class="text-white">© 2025 NiluKicks. All rights reserved.
+         |
+        <a href="portfolio.html" class="hover:underline text-white">Portfolio</a> |
+        <a href="contact.html" class="hover:underline text-white">Privacy Policy</a> |
+        <a href="#" class="hover:underline text-white">Terms & Conditions</a>
+    </p>
+  </footer>
+  <script type="module">
+    // --- PRODUCTS data and getProductById function ---
+    const PRODUCTS = [
+        {
+            id: '1',
+            name: 'Classic White Sneakers',
+            brand: 'Nike',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 89.99,
+            image: 'img/ff.jpg', // Corrected image path for existing product
+            alt: 'Classic white Nike sneakers',
+            description: 'Timeless design with superior comfort, perfect for everyday wear.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 10, 'US 8': 15, 'US 9': 20, 'US 10': 12, 'US 11': 8} // Added stock
+        },
+        {
+            id: '2',
+            name: 'UltraBoost Running Shoes',
+            brand: 'Adidas',
+            category: 'running',
+            gender: 'men',
+            price: 149.99,
+            image: 'img/2.jpg', // Corrected image path
+            alt: 'Adidas UltraBoost running shoes',
+            description: 'Experience ultimate energy return and cushioning with UltraBoost technology. Ideal for long-distance runs.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11', 'US 12'],
+            stock: {'US 8': 8, 'US 9': 12, 'US 10': 18, 'US 11': 10, 'US 12': 7}
+        },
+        {
+            id: '3',
+            name: 'Chuck Taylor All Star',
+            brand: 'Converse',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 5426.66,
+            image: 'img/a.jpg',
+            alt: 'Converse Chuck Taylor All Star high-top sneakers',
+            description: 'The iconic high-top sneaker, a staple for casual style. Versatile and always in fashion.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 6': 20, 'US 7': 25, 'US 8': 30, 'US 9': 20, 'US 10': 15}
+        },
+        {
+            id: '4',
+            name: 'Premium Leather Oxfords',
+            brand: 'Clarks',
+            category: 'formal',
+            gender: 'men',
+            price: 120.00,
+            image: 'img/hh.jpg', // Corrected image path
+            alt: 'Brown leather formal oxford shoes',
+            description: 'Crafted from premium leather, these Oxfords offer sophisticated style and lasting comfort for formal occasions.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 10, 'US 8': 15, 'US 9': 12, 'US 10': 8, 'US 11': 5}
+        },
+        {
+            id: '5',
+            name: 'Waterproof Hiking Boots',
+            brand: 'Timberland',
+            category: 'boots',
+            gender: 'unisex',
+            price: 180.00,
+            image: 'img/3.jpg', // Corrected image path
+            alt: 'Timberland waterproof hiking boots',
+            description: 'Durable and waterproof, these boots are built for rugged trails and outdoor adventures. Stay dry and comfortable.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12'],
+            stock: {'US 7': 5, 'US 8': 8, 'US 9': 10, 'US 10': 7, 'US 11': 4, 'US 12': 2}
+        },
+        {
+            id: '6',
+            name: 'Arizona Birko-Flor Sandals',
+            brand: 'Birkenstock',
+            category: 'sandals',
+            gender: 'unisex',
+            price: 99.99,
+            image: 'img/gg.jpg', // Corrected image path
+            alt: 'Birkenstock Arizona sandals',
+            description: 'The legendary two-strap design from Birkenstock, offering unparalleled comfort and support with its contoured footbed.',
+            sizes: ['US 5', 'US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 5': 10, 'US 6': 15, 'US 7': 20, 'US 8': 15, 'US 9': 10}
+        },
+        {
+            id: '7',
+            name: 'Air Max 90',
+            brand: 'Nike',
+            category: 'sneakers',
+            gender: 'men',
+            price: 129.99,
+            image: 'img/ii.jpg', // Corrected image path
+            alt: 'Nike Air Max 90 sneakers',
+            description: 'An iconic silhouette with visible Air cushioning, delivering comfort and heritage style.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 10, 'US 8': 15, 'US 9': 10, 'US 10': 8, 'US 11': 6}
+        },
+        {
+            id: '8',
+            name: 'Stan Smith',
+            brand: 'Adidas',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 79.99,
+            image: 'img/7.jpg', // Corrected image path
+            alt: 'Adidas Stan Smith tennis shoes',
+            description: 'Clean, crisp, and timeless. The Stan Smith is a minimalist icon that pairs with anything.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 6': 12, 'US 7': 18, 'US 8': 20, 'US 9': 15, 'US 10': 10}
+        },
+        {
+            id: '9',
+            name: 'Vans Old Skool',
+            brand: 'Vans',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 70.00,
+            image: 'img/jj.jpg', // Corrected image path
+            alt: 'Vans Old Skool skate shoes',
+            description: 'The classic Vans skate shoe and first to bear the iconic side stripe. Durable and stylish.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 6': 15, 'US 7': 20, 'US 8': 18, 'US 9': 12, 'US 10': 10}
+        },
+        {
+            id: '10',
+            name: 'Chelsea Boots',
+            brand: 'Clarks',
+            category: 'boots',
+            gender: 'men',
+            price: 150.00,
+            image: 'img/kk.jpg', // Corrected image path
+            alt: 'Black leather Chelsea boots',
+            description: 'Sleek and versatile Chelsea boots, perfect for both casual and semi-formal looks.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 8': 8, 'US 9': 12, 'US 10': 10, 'US 11': 7}
+        },
+        {
+            id: '11',
+            name: 'Elegant High Heels',
+            brand: 'Steve Madden',
+            category: 'formal',
+            gender: 'women',
+            price: 110.00,
+            image: 'img/ll.jpg', // Corrected image path
+            alt: 'Black elegant high heels',
+            description: 'Command attention with these stunning high heels, designed for comfort and style.',
+            sizes: ['US 5', 'US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 5': 10, 'US 6': 15, 'US 7': 12, 'US 8': 8, 'US 9': 5}
+        },
+        {
+            id: '12',
+            name: 'Sporty Slides',
+            brand: 'Puma',
+            category: 'sandals',
+            gender: 'unisex',
+            price: 35.00,
+            image: 'img/mm.jpg', // Corrected image path
+            alt: 'Puma sporty slides',
+            description: 'Perfect for post-workout comfort or casual poolside lounging. Easy slip-on design.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 6': 20, 'US 7': 25, 'US 8': 20, 'US 9': 15}
+        },
+        {
+            id: '13',
+            name: 'GEL-Kayano Running Shoes',
+            brand: 'ASICS',
+            category: 'running',
+            gender: 'women',
+            price: 160.00,
+            image: 'img/nn.jpg', // Corrected image path
+            alt: 'ASICS GEL-Kayano running shoes',
+            description: 'Stability and cushioning for overpronators. Built for long-distance comfort and performance.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 6': 9, 'US 7': 14, 'US 8': 12, 'US 9': 9, 'US 10': 6}
+        },
+        {
+            id: '14',
+            name: 'Slip-On Loafers',
+            brand: 'Skechers',
+            category: 'casual',
+            gender: 'men',
+            price: 75.00,
+            image: 'img/ooo.jpg', // Corrected image path
+            alt: 'Skechers casual slip-on loafers',
+            description: 'Effortless style and comfort in a versatile slip-on design, perfect for everyday wear.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 12, 'US 8': 18, 'US 9': 15, 'US 10': 10, 'US 11': 7}
+        },
+        {
+            id: '15',
+            name: 'Classic Leather Sneakers',
+            brand: 'Reebok',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 85.00,
+            image: 'img/pp.jpg', // Corrected image path
+            alt: 'Reebok Classic Leather sneakers',
+            description: 'An iconic, minimalist design with soft leather for ultimate comfort and versatility.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 6': 15, 'US 7': 20, 'US 8': 25, 'US 9': 20, 'US 10': 15}
+        },
+        {
+            id: '16',
+            name: 'Trail Running Shoes',
+            brand: 'Merrell',
+            category: 'running',
+            gender: 'unisex',
+            price: 130.00,
+            image: 'img/b.jpg',
+            alt: 'Merrell trail running shoes',
+            description: 'Conquer any terrain with these durable and grippy trail running shoes. Built for adventure.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 8, 'US 8': 12, 'US 9': 10, 'US 10': 7, 'US 11': 4}
+        },
+        {
+            id: '17',
+            name: 'Block Heel Sandals',
+            brand: 'Zara',
+            category: 'sandals',
+            gender: 'women',
+            price: 59.99,
+            image: 'img/c.jpg',
+            alt: 'Zara block heel sandals',
+            description: 'Stylish block heel sandals perfect for summer evenings and casual outings.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 6': 10, 'US 7': 15, 'US 8': 12, 'US 9': 8}
+        },
+        {
+            id: '18',
+            name: 'Dress Loafers',
+            brand: 'Allen Edmonds',
+            category: 'formal',
+            gender: 'men',
+            price: 295.00,
+            image: 'img/d.jpg',
+            alt: 'Allen Edmonds dress loafers',
+            description: 'Sophisticated and comfortable dress loafers for the discerning gentleman. Handcrafted for excellence.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 8': 5, 'US 9': 8, 'US 10': 6, 'US 11': 3}
+        },
+        {
+            id: '19',
+            name: 'High-Top Basketball Shoes',
+            brand: 'Nike',
+            category: 'sneakers',
+            gender: 'men',
+            price: 170.00,
+            image: 'img/e.jpg',
+            alt: 'Nike high-top basketball shoes',
+            description: 'Engineered for explosive jumps and quick cuts, these basketball shoes provide supreme ankle support.',
+            sizes: ['US 9', 'US 10', 'US 11', 'US 12'],
+            stock: {'US 9': 7, 'US 10': 10, 'US 11': 8, 'US 12': 5}
+        },
+        {
+            id: '20',
+            name: 'Adilette Comfort Slides',
+            brand: 'Adidas',
+            category: 'sandals',
+            gender: 'unisex',
+            price: 45.00,
+            image: 'img/f.jpg',
+            alt: 'Adidas Adilette comfort slides',
+            description: 'Iconic slides with a contoured footbed for ultimate comfort, perfect for casual wear or after sports.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 7': 15, 'US 8': 20, 'US 9': 18, 'US 10': 12}
+        },
+        {
+            id: '21',
+            name: 'Skate High-Tops',
+            brand: 'Vans',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 80.00,
+            image: 'img/g.jpg',
+            alt: 'Vans Sk8-Hi high-top skate shoes',
+            description: 'Designed for durability and support, the Sk8-Hi is a classic in skate culture and street style.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 6': 12, 'US 7': 18, 'US 8': 15, 'US 9': 10, 'US 10': 7}
+        },
+        {
+            id: '22',
+            name: 'Women\'s Running Trainers',
+            brand: 'Puma',
+            category: 'running',
+            gender: 'women',
+            price: 90.00,
+            image: 'img/h.jpg',
+            alt: 'Puma women\'s running trainers',
+            description: 'Lightweight and responsive, these trainers provide excellent cushioning for your daily runs.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 6': 10, 'US 7': 15, 'US 8': 12, 'US 9': 8}
+        },
+        {
+            id: '23',
+            name: 'Men\'s Casual Loafers',
+            brand: 'Tommy Hilfiger',
+            category: 'casual',
+            gender: 'men',
+            price: 95.00,
+            image: 'img/i.jpg',
+            alt: 'Tommy Hilfiger men\'s casual loafers',
+            description: 'Stylish and comfortable casual loafers perfect for relaxed outings or smart-casual attire.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 8': 8, 'US 9': 12, 'US 10': 10, 'US 11': 7}
+        },
+        {
+            id: '24',
+            name: 'Snow Boots',
+            brand: 'Columbia',
+            category: 'boots',
+            gender: 'unisex',
+            price: 160.00,
+            image: 'img/j.jpg',
+            alt: 'Columbia waterproof snow boots',
+            description: 'Stay warm and dry in extreme conditions with these insulated and waterproof snow boots.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 5, 'US 8': 8, 'US 9': 7, 'US 10': 5, 'US 11': 3}
+        },
+        {
+            id: '25',
+            name: 'Platform Sneakers',
+            brand: 'Converse',
+            category: 'sneakers',
+            gender: 'women',
+            price: 75.00,
+            image: 'img/k.jpg',
+            alt: 'Converse platform high-top sneakers',
+            description: 'Elevate your style with these trendy platform high-tops, adding a modern twist to a classic.',
+            sizes: ['US 5', 'US 6', 'US 7', 'US 8'],
+            stock: {'US 5': 10, 'US 6': 15, 'US 7': 12, 'US 8': 8}
+        },
+        {
+            id: '26',
+            name: 'Derby Shoes',
+            brand: 'ECCO',
+            category: 'formal',
+            gender: 'men',
+            price: 180.00,
+            image: 'img/l.jpg',
+            alt: 'ECCO black leather Derby shoes',
+            description: 'Elegant and exceptionally comfortable Derby shoes, ideal for business and formal events.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 8': 7, 'US 9': 10, 'US 10': 8, 'US 11': 5}
+        },
+        {
+            id: '27',
+            name: 'Beach Flip Flops',
+            brand: 'Havaianas',
+            category: 'sandals',
+            gender: 'unisex',
+            price: 25.00,
+            image: 'img/m.jpg',
+            alt: 'Havaianas colorful beach flip flops',
+            description: 'The quintessential flip-flops for beach days and relaxed summer vibes. Durable and comfortable.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 6': 25, 'US 7': 30, 'US 8': 25, 'US 9': 20}
+        },
+        {
+            id: '28',
+            name: 'Kids Light-Up Sneakers',
+            brand: 'Skechers',
+            category: 'sneakers',
+            gender: 'kids',
+            price: 55.00,
+            image: 'img/n.jpg',
+            alt: 'Skechers kids light-up sneakers',
+            description: 'Fun and bright sneakers for kids, featuring flashing lights with every step. Durable and playful.',
+            sizes: ['US 10C', 'US 11C', 'US 12C', 'US 1Y', 'US 2Y'],
+            stock: {'US 10C': 15, 'US 11C': 20, 'US 12C': 18, 'US 1Y': 12, 'US 2Y': 10}
+        },
+        {
+            id: '29',
+            name: 'Waterproof Trail Runners',
+            brand: 'Salomon',
+            category: 'running',
+            gender: 'unisex',
+            price: 140.00,
+            image: 'img/oo.jpg',
+            alt: 'Salomon waterproof trail running shoes',
+            description: 'Designed for challenging trails, offering excellent grip and waterproof protection.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 8, 'US 8': 12, 'US 9': 10, 'US 10': 7, 'US 11': 4}
+        },
+        {
+            id: '30',
+            name: 'Boat Shoes',
+            brand: 'Sperry',
+            category: 'casual',
+            gender: 'men',
+            price: 90.00,
+            image: 'img/p.jpg',
+            alt: 'Sperry classic boat shoes',
+            description: 'The original boat shoe, offering classic style and dependable wet/dry traction.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 8': 10, 'US 9': 15, 'US 10': 12, 'US 11': 8}
+        },
+        {
+            id: '31',
+            name: 'ZoomX Invincible Run Flyknit',
+            brand: 'Nike',
+            category: 'running',
+            gender: 'women',
+            price: 180.00,
+            image: 'img/q.jpg', // Placeholder
+            alt: 'Nike ZoomX Invincible Run Flyknit running shoes',
+            description: 'Maximize your mileage with exceptional cushioning and energy return.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 6': 7, 'US 7': 10, 'US 8': 8, 'US 9': 5}
+        },
+        {
+            id: '32',
+            name: 'Forum Low Classic',
+            brand: 'Adidas',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 90.00,
+            image: 'img/r.jpg', // Placeholder
+            alt: 'Adidas Forum Low Classic sneakers',
+            description: 'A legendary basketball silhouette reinvented for the streets. Iconic and versatile.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 10, 'US 8': 15, 'US 9': 10, 'US 10': 8, 'US 11': 6}
+        },
+        {
+            id: '33',
+            name: 'Waterproof Work Boots',
+            brand: 'Caterpillar',
+            category: 'boots',
+            gender: 'men',
+            price: 165.00,
+            image: 'img/s.jpg', // Placeholder
+            alt: 'Caterpillar waterproof work boots',
+            description: 'Built for durability and protection in challenging work environments.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11', 'US 12'],
+            stock: {'US 8': 5, 'US 9': 8, 'US 10': 7, 'US 11': 4, 'US 12': 2}
+        },
+        {
+            id: '34',
+            name: 'Wedge Sandals',
+            brand: 'Aldo',
+            category: 'sandals',
+            gender: 'women',
+            price: 75.00,
+            image: 'img/t.jpg', // Placeholder
+            alt: 'Aldo comfortable wedge sandals',
+            description: 'Elevate your summer look with these stylish and comfortable wedge sandals.',
+            sizes: ['US 5', 'US 6', 'US 7', 'US 8'],
+            stock: {'US 5': 10, 'US 6': 15, 'US 7': 12, 'US 8': 8}
+        },
+        {
+            id: '35',
+            name: 'GEL-Nimbus 24',
+            brand: 'ASICS',
+            category: 'running',
+            gender: 'unisex',
+            price: 150.00,
+            image: 'img/u.jpg', // Placeholder
+            alt: 'ASICS GEL-Nimbus 24 running shoes',
+            description: 'Premium cushioning and a softer landing experience for long-distance runners.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 9, 'US 8': 14, 'US 9': 12, 'US 10': 9, 'US 11': 6}
+        },
+        {
+            id: '36',
+            name: 'Slip-Resistant Work Shoes',
+            brand: 'Skechers',
+            category: 'casual',
+            gender: 'unisex',
+            price: 80.00,
+            image: 'img/v.jpg', // Placeholder
+            alt: 'Skechers slip-resistant work shoes',
+            description: 'Reliable comfort and essential safety features for demanding workdays.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 12, 'US 8': 18, 'US 9': 15, 'US 10': 10, 'US 11': 7}
+        },
+        {
+            id: '37',
+            name: 'Classic Court Sneakers',
+            brand: 'Reebok',
+            category: 'sneakers',
+            gender: 'men',
+            price: 70.00,
+            image: 'img/w.jpg', // Placeholder
+            alt: 'Reebok Classic Court sneakers',
+            description: 'A clean and crisp tennis-inspired look with timeless appeal.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 8': 10, 'US 9': 15, 'US 10': 10, 'US 11': 5}
+        },
+        {
+            id: '38',
+            name: 'Waterproof Hiking Shoes',
+            brand: 'Keen',
+            category: 'boots',
+            gender: 'unisex',
+            price: 140.00,
+            image: 'img/x.jpg', // Placeholder
+            alt: 'Keen waterproof hiking shoes',
+            description: 'Ready for any trail, offering waterproof protection and superior traction.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 7': 8, 'US 8': 12, 'US 9': 10, 'US 10': 7, 'US 11': 4}
+        },
+        {
+            id: '39',
+            name: 'Platform Loafers',
+            brand: 'Doc Martens',
+            category: 'casual',
+            gender: 'women',
+            price: 160.00,
+            image: 'img/y.jpg', // Placeholder
+            alt: 'Doc Martens platform loafers',
+            description: 'Classic style with an edgy platform sole, combining comfort and attitude.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 6': 7, 'US 7': 10, 'US 8': 8, 'US 9': 5}
+        },
+        {
+            id: '40',
+            name: 'Dress Brogues',
+            brand: 'Ted Baker',
+            category: 'formal',
+            gender: 'men',
+            price: 200.00,
+            image: 'img/z.jpg', // Placeholder
+            alt: 'Ted Baker brown leather brogues',
+            description: 'Sophisticated leather brogues with intricate detailing, perfect for formal events.',
+            sizes: ['US 8', 'US 9', 'US 10', 'US 11'],
+            stock: {'US 8': 5, 'US 9': 8, 'US 10': 6, 'US 11': 3}
+        },
+        {
+            id: '41',
+            name: 'Running Spikes',
+            brand: 'Brooks',
+            category: 'running',
+            gender: 'unisex',
+            price: 110.00,
+            image: 'img/aa.jpg', // Placeholder
+            alt: 'Brooks running spikes',
+            description: 'Lightweight and agile spikes for track and field performance.',
+            sizes: ['US 7', 'US 8', 'US 9', 'US 10'],
+            stock: {'US 7': 8, 'US 8': 12, 'US 9': 10, 'US 10': 7}
+        },
+        {
+            id: '42',
+            name: 'Fashion Sneakers',
+            brand: 'Balenciaga',
+            category: 'sneakers',
+            gender: 'unisex',
+            price: 750.00,
+            image: 'img/bb.jpg', // Placeholder
+            alt: 'Balenciaga high fashion sneakers',
+            description: 'Statement sneakers that blend luxury fashion with athletic design.',
+            sizes: ['EU 38', 'EU 39', 'EU 40', 'EU 41', 'EU 42'],
+            stock: {'EU 38': 3, 'EU 39': 5, 'EU 40': 4, 'EU 41': 3, 'EU 42': 2}
+        },
+        {
+            id: '43',
+            name: 'Mule Sandals',
+            brand: 'Sam Edelman',
+            category: 'sandals',
+            gender: 'women',
+            price: 85.00,
+            image: 'img/cc.jpg', // Placeholder
+            alt: 'Sam Edelman stylish mule sandals',
+            description: 'Effortlessly chic mule sandals, perfect for warm weather and elegant comfort.',
+            sizes: ['US 6', 'US 7', 'US 8', 'US 9'],
+            stock: {'US 6': 10, 'US 7': 15, 'US 8': 12, 'US 9': 8}
+        },
+        {
+            id: '44',
+            name: 'Basketball Lifestyle Shoes',
+            brand: 'Jordan',
+            category: 'sneakers',
+            gender: 'men',
+            price: 190.00,
+            image: 'img/dd.jpg', // Placeholder
+            alt: 'Jordan lifestyle basketball shoes',
+            description: 'Iconic Jordan style reimagined for everyday wear, offering heritage and comfort.',
+            sizes: ['US 9', 'US 10', 'US 11', 'US 12'],
+            stock: {'US 9': 6, 'US 10': 9, 'US 11': 7, 'US 12': 4}
+        }
+    ];
+
+    function getProductById(id) {
+        return PRODUCTS.find(product => product.id === id);
+    }
+
+    // --- Universal Toast Notification ---
+    function showToast(message, type = 'info') {
+        const toastContainer = document.getElementById('toast-container');
+        if (!toastContainer) {
+            const div = document.createElement('div');
+            div.id = 'toast-container';
+            div.className = 'fixed bottom-4 right-4 z-[1000] flex flex-col-reverse gap-2';
+            document.body.appendChild(div);
+        }
+
+        const toast = document.createElement('div');
+        toast.className = `alert ${type === 'success' ? 'alert-success' : type === 'error' ? 'alert-error' : type === 'warning' ? 'alert-warning' : 'alert-info'} text-white shadow-lg transition-all duration-300 transform translate-x-full opacity-0`;
+        toast.innerHTML = `
+            <span>${message}</span>
+        `;
+
+        toastContainer.appendChild(toast);
+
+        setTimeout(() => {
+            toast.classList.remove('translate-x-full', 'opacity-0');
+            toast.classList.add('translate-x-0', 'opacity-100');
+        }, 100);
+
+        setTimeout(() => {
+            toast.classList.remove('translate-x-0', 'opacity-100');
+            toast.classList.add('translate-x-full', 'opacity-0');
+            toast.addEventListener('transitionend', () => toast.remove());
+        }, 3000);
+    }
+
+    // --- Cart Management Functions ---
+    function getCart() {
+        try {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            return cart;
+        } catch (e) {
+            console.error("Error parsing cart from localStorage:", e);
+            return [];
+        }
+    }
+
+    function saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+    }
+
+    function addToCart(productId, selectedSize, quantity = 1) {
+        const cart = getCart();
+        const product = getProductById(productId);
+
+        if (!product) {
+            console.error('Product not found:', productId);
+            showToast('Error: Product not found.', 'error');
+            return;
+        }
+
+        if (!selectedSize || selectedSize === "Select Size") {
+            showToast('Please select a size first!', 'warning');
+            return;
+        }
+
+        const existingItemIndex = cart.findIndex(item => item.id === productId && item.size === selectedSize);
+
+        if (existingItemIndex > -1) {
+            // Check stock before adding
+            const currentStock = product.stock ? product.stock[selectedSize] || 0 : Infinity;
+            if (cart[existingItemIndex].quantity + quantity > currentStock) {
+                showToast(`Cannot add more. Only ${currentStock} left in stock for size ${selectedSize}.`, 'warning');
+                return;
+            }
+            cart[existingItemIndex].quantity += quantity;
+        } else {
+            // Check stock for new item
+            const currentStock = product.stock ? product.stock[selectedSize] || 0 : Infinity;
+            if (quantity > currentStock) {
+                showToast(`Cannot add ${quantity}. Only ${currentStock} left in stock for size ${selectedSize}.`, 'warning');
+                return;
+            }
+            cart.push({
+                id: productId,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                size: selectedSize,
+                quantity: quantity
+            });
+        }
+        saveCart(cart);
+        showToast(`${product.name} (Size: ${selectedSize}) added to cart!`, 'success');
+    }
+
+    function updateCartItemQuantity(productId, size, newQuantity) {
+        let cart = getCart();
+        const itemIndex = cart.findIndex(item => item.id === productId && item.size === size);
+
+        if (itemIndex > -1) {
+            const product = getProductById(productId);
+            const currentStock = product.stock ? product.stock[size] || 0 : Infinity;
+
+            if (newQuantity <= 0) {
+                cart.splice(itemIndex, 1);
+                showToast('Item removed from cart.', 'info');
+            } else if (newQuantity > currentStock) {
+                showToast(`Cannot add more. Only ${currentStock} left in stock for size ${size}. Quantity adjusted.`, 'warning');
+                cart[itemIndex].quantity = currentStock; // Adjust quantity to max stock
+            } else {
+                cart[itemIndex].quantity = newQuantity;
+                showToast('Cart updated.', 'info');
+            }
+            saveCart(cart);
+        }
+    }
+
+    function removeFromCart(productId, size) {
+        let cart = getCart();
+        const initialLength = cart.length;
+        cart = cart.filter(item => !(item.id === productId && item.size === size));
+
+        if (cart.length < initialLength) {
+            saveCart(cart);
+            showToast('Item removed from cart.', 'info');
+        }
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        updateCartDisplay();
+        showToast('Your cart has been cleared.', 'info');
+    }
+
+    function getCartTotal() {
+        const cart = getCart();
+        return cart.reduce((total, item) => {
+            const product = getProductById(item.id);
+            return total + (product ? product.price * item.quantity : 0);
+        }, 0);
+    }
+
+    function getCartItemCount() {
+        const cart = getCart();
+        return cart.reduce((count, item) => count + item.quantity, 0);
+    }
+
+    function updateCartDisplay() {
+        const cartCountDesktop = document.getElementById('cart-count-desktop');
+        const cartCountMobile = document.getElementById('cart-count-mobile');
+        const cartCountFloating = document.getElementById('cart-count');
+
+        const count = getCartItemCount();
+
+        if (cartCountDesktop) cartCountDesktop.textContent = count;
+        if (cartCountMobile) cartCountMobile.textContent = count;
+        if (cartCountFloating) cartCountFloating.textContent = count;
+
+        const cartTotalElement = document.getElementById('cart-total');
+        if (cartTotalElement) {
+            cartTotalElement.textContent = formatPrice(getCartTotal());
+        }
+
+        const cartItemsContainer = document.getElementById('cart-items');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+
+        if (cartItemsContainer && emptyCartMessage) {
+            const cart = getCart();
+            const cartDetails = getCartItemsWithDetails(cart);
+
+            if (cartDetails.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                cartItemsContainer.innerHTML = '';
+            } else {
+                emptyCartMessage.style.display = 'none';
+                cartItemsContainer.innerHTML = cartDetails.map(item => `
+                    <div class="flex items-center gap-4 bg-base-200 dark:bg-gray-700 p-3 rounded-lg shadow-sm">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-md flex-shrink-0" />
+                        <div class="flex-grow">
+                            <p class="font-semibold text-lg">${item.name}</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Size: ${item.size}</p>
+                            <p class="text-sm font-medium">${item.quantity} x ${formatPrice(item.price)}</p>
+                        </div>
+                        <button class="btn btn-sm btn-circle btn-ghost remove-from-cart-sidebar-btn" data-id="${item.id}" data-size="${item.size}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                    </div>
+                `).join('');
+
+                cartItemsContainer.querySelectorAll('.remove-from-cart-sidebar-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = e.currentTarget.dataset.id;
+                        const size = e.currentTarget.dataset.size;
+                        removeFromCart(id, size);
+                    });
+                });
+            }
+        }
+    }
+
+    function formatPrice(price) {
+        return new Intl.NumberFormat('IN', {
+            style: 'currency',
+            currency: 'INR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }).format(price);
+    }
+
+    // --- Dark Mode Toggle ---
+    function setupDarkModeToggle() {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
+
+        const applyTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        };
+
+        applyTheme(localStorage.getItem('theme') || 'light');
+
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        }
+
+        if (darkModeToggleMobile) {
+            darkModeToggleMobile.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        }
+    }
+
+    // --- Mobile Menu Toggle ---
+    function setupMobileMenuToggle() {
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+        }
+    }
+
+    // --- Cookie Consent Banner ---
+    function setupCookieConsent() {
+        const banner = document.getElementById('cookie-consent-banner');
+        const acceptBtn = document.getElementById('accept-cookies-btn');
+        const declineBtn = document.getElementById('decline-cookies-btn');
+
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            if (banner) banner.style.display = 'none';
+        } else {
+            setTimeout(() => {
+                if (banner) {
+                    banner.classList.remove('translate-y-full');
+                }
+            }, 500);
+        }
+
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                if (banner) banner.classList.add('translate-y-full');
+                setTimeout(() => { if (banner) banner.style.display = 'none'; }, 500);
+            });
+        }
+
+        if (declineBtn) {
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                if (banner) banner.classList.add('translate-y-full');
+                setTimeout(() => { if (banner) banner.style.display = 'none'; }, 500);
+            });
+        }
+    }
+
+    // --- Scroll to Top Button ---
+    function setupScrollToTop() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    scrollToTopBtn.classList.remove('opacity-0');
+                    scrollToTopBtn.classList.add('opacity-100');
+                } else {
+                    scrollToTopBtn.classList.remove('opacity-100');
+                    scrollToTopBtn.classList.add('opacity-0');
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    }
+
+    // --- Helper function for cart details ---
+    function getCartItemsWithDetails(cart) {
+        return cart.map(item => {
+            const product = getProductById(item.id);
+            if (product) {
+                return {
+                    ...product,
+                    quantity: item.quantity,
+                    size: item.size
+                };
+            }
+            return null;
+        }).filter(item => item !== null);
+    }
+
+
+    const productList = document.getElementById('product-list');
+    const sortBySelect = document.getElementById('sort-by');
+    const filterCategorySelect = document.getElementById('filter-category');
+    const filterBrandSelect = document.getElementById('filter-brand');
+    const categoryBrandCards = document.querySelectorAll('.categories-section .card');
+    const searchInputDesktop = document.getElementById('search-input-desktop');
+    const searchInputMobile = document.getElementById('search-input-mobile');
+
+    // Dark Mode elements
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
+    const htmlElement = document.documentElement;
+    const bodyElement = document.body;
+    const mainElement = document.querySelector('main');
+
+    // Mobile Menu elements
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
+    // Product Modal elements
+    const productModal = document.getElementById('product_details_modal');
+    const modalProductName = document.getElementById('modal-product-name');
+    const modalProductImage = document.getElementById('modal-product-image');
+    const modalProductDescription = document.getElementById('modal-product-description');
+    const modalProductCategory = document.getElementById('modal-product-category');
+    const modalProductBrand = document.getElementById('modal-product-brand');
+    const modalProductGender = document.getElementById('modal-product-gender');
+    const modalProductPrice = document.getElementById('modal-product-price');
+    const modalProductSizes = document.getElementById('modal-product-sizes');
+    const modalProductQuantity = document.getElementById('modal-product-quantity');
+    const modalAddToCartBtn = document.getElementById('modal-add-to-cart-btn');
+    const modalViewDetailsBtn = document.getElementById('modal-view-details-btn');
+
+    // Cookie Consent elements
+    const cookieConsentBanner = document.getElementById('cookie-consent-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies-btn');
+    const declineCookiesBtn = document.getElementById('decline-cookies-btn');
+
+
+    // --- Functions ---
+
+    function renderProducts(productsToRender) {
+        if (!productList) return;
+        productList.innerHTML = '';
+        if (productsToRender.length === 0) {
+            productList.innerHTML = '<p class="col-span-full text-center text-gray-600 dark:text-gray-400">No products found matching your criteria.</p>';
+            return;
+        }
+        productsToRender.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'card bg-base-100 shadow-xl product-card';
+            productCard.innerHTML = `
+                <figure class="h-48">
+                    <img src="${product.image}" alt="${product.alt}" class="w-full h-full object-cover" loading="lazy"/>
+                </figure>
+                <div class="card-body p-4">
+                    <h3 class="card-title text-xl font-semibold">${product.name}</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">${product.brand} - ${product.category}</p>
+                    <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">₹${(product.price * 83.50).toFixed(2)}</p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-primary btn-sm add-to-cart-btn" data-product-id="${product.id}" data-default-size="${product.sizes[0] || 'One Size'}">Add to Cart</button>
+                        <button class="btn btn-outline btn-sm view-product-btn" data-product-id="${product.id}">Quick View</button>
+                    </div>
+                </div>
+            `;
+            productList.appendChild(productCard);
+        });
+
+        // IMPORTANT: Attach event listeners immediately after rendering products
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = e.currentTarget.dataset.productId;
+                const defaultSize = e.currentTarget.dataset.defaultSize;
+                const product = getProductById(productId);
+                if (product) {
+                    addToCart(product.id, defaultSize, 1); // Use addToCart from consolidated script
+                } else {
+                    showToast('Product not found!', 'error');
+                }
+                e.stopPropagation();
+            });
+        });
+        document.querySelectorAll('.view-product-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = e.currentTarget.dataset.productId;
+                openProductModal(productId);
+                e.stopPropagation();
+            });
+        });
+    }
+
+    function applyFiltersAndSort() {
+        let filteredProducts = [...PRODUCTS];
+        const searchTermDesktop = searchInputDesktop.value.toLowerCase();
+        const searchTermMobile = searchInputMobile.value.toLowerCase();
+        const activeSearchTerm = searchTermDesktop || searchTermMobile;
+
+        if (activeSearchTerm) {
+            filteredProducts = filteredProducts.filter(product =>
+                product.name.toLowerCase().includes(activeSearchTerm) ||
+                product.brand.toLowerCase().includes(activeSearchTerm) ||
+                product.category.toLowerCase().includes(activeSearchTerm) ||
+                product.description.toLowerCase().includes(activeSearchTerm)
+            );
+        }
+
+        const selectedCategory = filterCategorySelect.value;
+        if (selectedCategory !== 'all') {
+            filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+        }
+
+        const selectedBrand = filterBrandSelect.value;
+        if (selectedBrand !== 'all') {
+            filteredProducts = filteredProducts.filter(product => product.brand === selectedBrand);
+        }
+
+        const sortBy = sortBySelect.value;
+        if (sortBy === 'price-asc') {
+            filteredProducts.sort((a, b) => a.price - b.price);
+        } else if (sortBy === 'price-desc') {
+            filteredProducts.sort((a, b) => b.price - a.price);
+        } else if (sortBy === 'name-asc') {
+            filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        renderProducts(filteredProducts);
+    }
+
+    function openProductModal(productId) {
+        const product = getProductById(productId);
+        if (product) {
+            modalProductName.textContent = product.name;
+            modalProductImage.src = product.image;
+            modalProductImage.alt = product.alt;
+            modalProductDescription.textContent = product.description;
+            modalProductCategory.textContent = product.category;
+            modalProductBrand.textContent = product.brand;
+            modalProductGender.textContent = product.gender;
+            modalProductPrice.textContent = `₹${(product.price * 83.50).toFixed(2)}`;
+            modalProductQuantity.value = 1;
+
+            modalProductSizes.innerHTML = '';
+            if (product.sizes && product.sizes.length > 0) {
+                product.sizes.forEach(size => {
+                    const option = document.createElement('option');
+                    option.value = size;
+                    option.textContent = `${size} (Stock: ${product.stock[size] || 0})`; // Display stock in modal
+                    option.disabled = (product.stock[size] || 0) === 0; // Disable if out of stock
+                    modalProductSizes.appendChild(option);
+                });
+            } else {
+                 const option = document.createElement('option');
+                 option.value = 'One Size';
+                 option.textContent = 'One Size';
+                 modalProductSizes.appendChild(option);
+            }
+
+            modalAddToCartBtn.dataset.productId = product.id;
+            modalViewDetailsBtn.href = `product.html?id=${product.id}`; // This link might need adjustment if product.html is truly gone
+            productModal.showModal();
+        } else {
+            showToast('Product not found!', 'error');
+        }
+    }
+
+
+    // --- Event Listeners ---
+
+    // Filters and Sorting
+    sortBySelect.addEventListener('change', applyFiltersAndSort);
+    filterCategorySelect.addEventListener('change', applyFiltersAndSort);
+    filterBrandSelect.addEventListener('change', applyFiltersAndSort);
+    searchInputDesktop.addEventListener('input', applyFiltersAndSort);
+    searchInputMobile.addEventListener('input', applyFiltersAndSort);
+
+    categoryBrandCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const filterCategory = card.dataset.filterCategory;
+            const filterBrand = card.dataset.filterBrand;
+            if (filterCategory) {
+                filterCategorySelect.value = filterCategory;
+                filterBrandSelect.value = 'all';
+            } else if (filterBrand) {
+                filterBrandSelect.value = filterBrand;
+                filterCategorySelect.value = 'all';
+            }
+            applyFiltersAndSort();
+            document.getElementById('product-grid-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Product Modal Add to Cart
+    modalAddToCartBtn.addEventListener('click', () => {
+        const productId = modalAddToCartBtn.dataset.productId;
+        const quantity = parseInt(modalProductQuantity.value, 10);
+        const size = modalProductSizes.value;
+        const product = getProductById(productId);
+
+        if (!product) {
+            showToast('Product not found!', 'error');
+            return;
+        }
+        if (!size || size === "Select Size") {
+            showToast('Please select a size.', 'warning');
+            return;
+        }
+        if (quantity < 1) {
+            showToast('Quantity must be at least 1.', 'warning');
+            return;
+        }
+
+        // Check stock before adding from modal
+        const currentStock = product.stock ? product.stock[size] || 0 : Infinity;
+        if (quantity > currentStock) {
+            showToast(`Cannot add ${quantity}. Only ${currentStock} left in stock for size ${size}.`, 'warning');
+            return;
+        }
+
+        addToCart(productId, size, quantity); // Use addToCart from consolidated script
+        productModal.close(); // Close modal after adding to cart
+    });
+
+
+    // Cookie Consent
+    acceptCookiesBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        setupCookieConsent(); // Re-run to hide banner
+        showToast('Cookies accepted! Enjoy your Browse.', 'success');
+    });
+    declineCookiesBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        setupCookieConsent(); // Re-run to hide banner
+        showToast('Cookies declined. Some features may be limited.', 'warning');
+    });
+
+
+    // --- Initializations (DOMContentLoaded) ---
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setupDarkModeToggle();
+        setupMobileMenuToggle();
+        setupCookieConsent();
+        setupScrollToTop();
+        updateCartDisplay();
+        applyFiltersAndSort(); // Initial product render and attach event listeners
+    });
+ 
+  </script>
+</body>
+</html>
